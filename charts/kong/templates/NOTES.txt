@@ -1,4 +1,4 @@
-To connect to Kong, please execute the following commands:
+To connect to Kong, please execute the following commandss:
 {{ if contains "LoadBalancer" .Values.proxy.type }}
 HOST=$(kubectl get svc --namespace {{ template "kong.namespace" . }} {{ template "kong.fullname" . }}-proxy -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 PORT=$(kubectl get svc --namespace {{ template "kong.namespace" . }} {{ template "kong.fullname" . }}-proxy -o jsonpath='{.spec.ports[0].port}')
